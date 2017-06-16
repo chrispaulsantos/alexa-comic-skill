@@ -1,10 +1,12 @@
 'use strict';
 const Alexa = require("alexa-sdk");
 const request = require('request');
-const url = 'http://www.midtowncomics.com/store/ajax_wr_instore.asp';
+const URL = 'http://www.midtowncomics.com/store/ajax_wr_instore.asp';
+const APP_ID = 'amzn1.ask.skill.10736cba-646c-44e6-bac3-03e0708f1919';
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
+    alexa.appId = APP_ID;
     alexa.registerHandlers(handlers);
     alexa.execute();
 };
@@ -19,7 +21,7 @@ var handlers = {
     'GetComics': function () {
         var output = '';
         var weekly_releases = {};
-        request(url, (err, res, json) => {
+        request(URL, (err, res, json) => {
             console.log('Processing data');
             weekly_releases = process(json);
             weekly_releases.marvel.forEach(comic => {
