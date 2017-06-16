@@ -1,0 +1,3 @@
+GetComicIntent to get next week's comics
+GetComicIntent what comics are coming out next week
+GetComicIntent what comics are coming out

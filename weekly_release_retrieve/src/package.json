@@ -2,13 +2,15 @@
   "name": "weekly_comic_retrieve",
   "version": "1.0.0",
   "description": "Retrieve weekly comics from Midtown Comics website",
-  "main": "retrieve.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node retrieve.js"
+    "test": "node retrieve.js",
+    "zip": "rm function.zip | zip -r function.zip ."
   },
   "author": "Chris Santos",
   "license": "ISC",
   "dependencies": {
+    "alexa-sdk": "^1.0.10",
     "request": "^2.81.0"
   }
 }
